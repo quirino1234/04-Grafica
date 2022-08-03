@@ -8,10 +8,12 @@ const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 import { NgChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
+import { GraficaComponent } from './components/grafica/grafica.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GraficaComponent
   ],
   imports: [
     BrowserModule,
