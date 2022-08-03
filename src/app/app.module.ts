@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
+const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
+
+import { NgChartsModule } from 'ng2-charts';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -8,7 +14,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    SocketIoModule.forRoot(config),
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
