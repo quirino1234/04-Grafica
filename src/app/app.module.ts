@@ -7,6 +7,8 @@ const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
 import { NgChartsModule } from 'ng2-charts';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { AppComponent } from './app.component';
 import { GraficaComponent } from './components/grafica/grafica.component';
 
@@ -18,7 +20,8 @@ import { GraficaComponent } from './components/grafica/grafica.component';
   imports: [
     BrowserModule,
     SocketIoModule.forRoot(config),
-    NgChartsModule
+    NgChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
