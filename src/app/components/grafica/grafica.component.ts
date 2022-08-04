@@ -10,7 +10,7 @@ import { WebsocketService } from '../../services/websocket.service';
 export class GraficaComponent implements OnInit {
 
   public lineChartData: Array<any> = [
-    {data: [ 0, 0, 0, 0], label: "Ventas"}
+    {data: [ 0, 0, 0, 0], label: 'Ventas'}
 
   ];
   public lineChartLabels: Array<any>=['Enero', 'Febrero', 'Marzo', 'Abril']
@@ -24,29 +24,12 @@ export class GraficaComponent implements OnInit {
 
     this.getData();
     this.escucharSocket();
-    /*setInterval( () => {
-
-      const newData = [
-        Math.round(  Math.random() * 100),
-        Math.round(  Math.random() * 100),
-        Math.round(  Math.random() * 100),
-        Math.round(  Math.random() * 100)
-      ];
-    
-    this.lineChartData = [
-      { data: newData, label: 'Ventas'}
-    ]
-
-    }, 3000);*/
-
   }
 
   getData(){
 
     this.http.get( 'http://localhost:5000/grafica')
-    .subscribe( (data: any) => this.lineChartData = data
-      
-    );
+    .subscribe( (data: any) => this.lineChartData = data  );
     
   }
 
@@ -57,9 +40,7 @@ export class GraficaComponent implements OnInit {
 
       console.log('socket', data);
       this.lineChartData = data;
-
-
-    })
+    });
   }
 
 }
